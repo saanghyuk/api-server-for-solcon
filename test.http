@@ -1,5 +1,5 @@
 
-GET http://localhost:3000/api/members
+GET https://ab180-members-api-server.herokuapp.com/api/members
 
 
 ###
