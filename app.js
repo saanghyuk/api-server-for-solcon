@@ -38,12 +38,17 @@ app.get("/api/members/:id", async (req, res) => {
   }
 });
 
-//
+// 무조건 리스트로 넣어야 함.
 app.post("/api/members", async (req, res) => {
   const newMember = req.body;
-  const member = Member.build(newMember);
-  await member.save();
-  res.send(newMember);
+  if (newMember.length == 1) {
+    const member = Member.build(newMember[0]);
+    await member.save();
+    res.send(newMember);
+  } else {
+    result = await Member.bulkCreate(newMember);
+    res.send(`${newMember.length} rows are created`);
+  }
 });
 
 // app.put("/api/members/:id", async (req, res) => {
@@ -82,6 +87,7 @@ app.put("/api/members/:id", async (req, res) => {
 //     res.status(404).send({ message: 'There is no member with the id!' });
 //   }
 // });
+
 app.delete("/api/members/:id", async (req, res) => {
   const { id } = req.params;
   const deletedCount = await Member.destroy({ where: { id: id } });
@@ -92,6 +98,11 @@ app.delete("/api/members/:id", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.delete("/api/members", async (req, res) => {
+  await Member.destroy({ where: {}, truncate: true });
+  res.send({ message: `All rows deleted` });
+});
+
+app.listen(process.env.PORT || 8000, () => {
   console.log("Server is listening...");
 });

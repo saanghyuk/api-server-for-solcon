@@ -126,6 +126,14 @@ module.exports = {
           emailAddress: "hojin@ab180.co",
           profileImage: "profile15.png",
         },
+        {
+          id: 16,
+          name: "Wonsuk Yang",
+          team: "Research",
+          position: "Data Scientist",
+          emailAddress: "wonsuk@ab180.co",
+          profileImage: "profile16.png",
+        },
       ],
       {}
     );
