@@ -10,6 +10,10 @@
     "migrate": "sequelize db:migrate",
     "seed": "sequelize db:seed:all"
   },
+  "engines": {
+    "node": "18.11.0",
+    "npm": "8.19.2"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
