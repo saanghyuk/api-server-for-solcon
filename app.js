@@ -1,8 +1,14 @@
 const express = require("express");
+
 const app = express();
 var path = require("path");
 
 // const path = require("path");
+
+var http = require("http");
+setInterval(function() {
+  http.get("https://ab180-members-api-server.herokuapp.com/api/members");
+}, 600000);
 
 // __dirname = "front";
 app.use(express.json());
