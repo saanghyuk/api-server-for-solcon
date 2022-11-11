@@ -109,6 +109,6 @@ app.delete("/api/members", async (req, res) => {
   res.send({ message: `All rows deleted` });
 });
 
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server is listening...");
 });
