@@ -5,7 +5,49 @@ GET https://ab180-members-api-server.herokuapp.com/api/members
 ###
 GET http://localhost:3000/api/members/3
 
+###
+
+POST https://ab180-members-api-server.herokuapp.com/api/members
+Content-Type:application/json
+
+[
+  { 
+  "name": "Sojeen Park", 
+  "team": "Customer Success", 
+  "position": "Team Lead", 
+  "emailAddress": "sojeen@ab180.co", 
+  "phoneNumber": "010-1234-5678"
+  },
+  { 
+  "name": "Sojeen Park", 
+  "team": "Customer Success", 
+  "position": "Team Lead", 
+  "emailAddress": "sojeen@ab180.co", 
+  "phoneNumber": "010-1234-5678"
+  }
+]
+
+
+
+
+
 ### 
+POST https://ab180-members-api-server.herokuapp.com/api/members
+Content-Type:application/json
+
+[
+  { 
+    "id": 15,
+  "name": "Sojeen Park", 
+  "team": "Customer Success", 
+  "position": "Team Lead", 
+  "emailAddress": "sojeen@ab180.co", 
+  "phoneNumber": "010-1234-5678"
+  }
+]
+
+
+###
 POST https://ab180-members-api-server.herokuapp.com/api/members
 Content-Type:application/json
 
